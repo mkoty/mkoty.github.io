@@ -1,1 +1,4 @@
+$medium-screen: 992px;
+
+$tablets-and-large: "only screen and (min-device-width : #{$medium-screen})";
 $default-color: #212121;

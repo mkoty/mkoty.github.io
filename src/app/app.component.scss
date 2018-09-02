@@ -9,9 +9,20 @@
 .app-container__header {
   background-color: $default-color;
   display: flex;
+  height: 200px;
 }
 
 .app-container__header-logo {
-  max-width: 1000px;
+  max-width: 100%;
   margin: auto;
+}
+
+@media #{$tablets-and-large} {
+  .app-container__header-logo {
+    max-width: 1000px;
+  }
+
+  .app-container__header {
+    height: auto;
+  }
 }
