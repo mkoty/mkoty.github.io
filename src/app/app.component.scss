@@ -14,12 +14,19 @@
 
 .app-container__header-logo {
   max-width: 100%;
+  min-height: 200px;
+  width: 100%;
   margin: auto;
+  background-image: url('../assets/stipan_project_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
 @media #{$tablets-and-large} {
   .app-container__header-logo {
-    max-width: 1000px;
+    max-width: 900px;
+    min-height: 300px;
   }
 
   .app-container__header {
