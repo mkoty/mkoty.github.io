@@ -1,0 +1,10 @@
+<div class="player-container">
+  <div class="player-container__track-cover" [ngStyle]="{'background-image': 'url(' + trackCover +')'}">
+
+  </div>
+  <audio class="player-container__audio-player"
+         [src]="track"
+         type="audio/mp3"
+         controls>
+  </audio>
+</div>

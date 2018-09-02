@@ -1,0 +1,19 @@
+@import "../../share";
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-container__track-cover {
+  width: $cover-size;
+  height: $cover-size;
+  background-size: cover;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.player-container__audio-player {
+  margin: auto;
+  margin-top: 50px;
+}

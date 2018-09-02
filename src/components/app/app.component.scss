@@ -1,4 +1,4 @@
-@import '../share.scss';
+@import '../../share';
 
 .app-container {
   text-align:center;
@@ -16,7 +16,7 @@
   min-height: 200px;
   width: 100%;
   margin: auto;
-  background-image: url('../assets/stipan_project_logo_3.png');
+  background-image: url('../../assets/stipan_project_logo_3.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
