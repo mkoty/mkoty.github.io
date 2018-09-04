@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "release": "ng build --prod --aot --base-href \"https://stipan.live/\" && npx ngh --dir=dist/stipan-project && git fetch && git checkout master && git pull origin gh-pages --allow-unrelated-histories && git push && git checkout dev",
+    "release": "ng build --prod --aot --base-href \"http://stipan.live/\" && npx ngh --dir=dist/stipan-project && git fetch && git checkout master && git pull origin gh-pages --allow-unrelated-histories && git push && git checkout dev",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
