@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {CarouselModule} from 'angular2-carousel';
+
 import { AppComponent } from './app.component';
 import { AudioPlayerComponent } from '../audio-player/audio-player.component';
 
@@ -10,7 +12,8 @@ import { AudioPlayerComponent } from '../audio-player/audio-player.component';
     AudioPlayerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

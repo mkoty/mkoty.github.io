@@ -1,7 +1,25 @@
 <div class="player-container">
-  <div class="player-container__track-cover"
-       [ngStyle]="{'background-image': 'url(' + trackCover +')'}">
-  </div>
+  <carousel-component class="carousel-container"
+                      [initialSlide]="1"
+                      [margin]="100"
+                      [angle]="20">
+    <div class="item-carousel">
+      <div class="player-container__track-cover"
+           [ngStyle]="{'background-image': 'url(../../assets/covers/right_to_love.jpg)'}">
+      </div>
+    </div>
+    <div class="item-carousel">
+      <div class="player-container__track-cover"
+           [ngStyle]="{'background-image': 'url(' + trackCover +')'}">
+      </div>
+    </div>
+    <div class="item-carousel">
+      <div class="player-container__track-cover"
+           [ngStyle]="{'background-image': 'url(../../assets/covers/you_&_i.jpg)'}">
+      </div>
+    </div>
+
+  </carousel-component>
   <audio class="player-container__audio-player"
          [src]="track"
          type="audio/mp3"

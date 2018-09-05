@@ -9,13 +9,22 @@
   width: $cover-size;
   height: $cover-size;
   background-size: cover;
-  margin: auto;
+  margin: 0;
   border-radius: 3px;
   box-shadow: inset 0px 0px 44px 10px $background-color;
 }
 
 .player-container__audio-player {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
+}
+
+.carousel-container {
+  margin: auto;
+}
+
+.item-carousel {
+  width: 300px !important;
+  height: 300px !important;
 }
