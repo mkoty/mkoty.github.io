@@ -1,5 +1,10 @@
 # StipanProject
 
+##Build
+Type `npm run build`
+After that in `dist/stipan-project/index.html` add to all `src` and `href` attributes prefix: `//stipan.live/`
+Type `npm run release`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
