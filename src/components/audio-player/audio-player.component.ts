@@ -8,10 +8,10 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class AudioPlayerComponent implements OnInit {
 
-  @Input() track: String;
-  @Input() trackCover: String;
+  @Input() songs: String;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
