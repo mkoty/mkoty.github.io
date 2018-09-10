@@ -3,6 +3,7 @@
 .player-container {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .player-container__track-cover {
