@@ -1,6 +1,9 @@
-<wait-spinner *ngIf="loadedImages !== songs.length + 1"
-              [@enterAnimation]>
-</wait-spinner>
+<div class="wait-spinner-container">
+  <wait-spinner *ngIf="loadedImages !== songs.length + 1"
+                [@enterAnimation]>
+  </wait-spinner>
+</div>
+
 
 <div class="app-container"
      [ngClass]="{'hide-content': loadedImages !== songs.length + 1}">
