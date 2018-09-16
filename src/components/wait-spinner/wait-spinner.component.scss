@@ -1,0 +1,63 @@
+@import "../../share";
+
+$spinner-width: 134px;
+$spinner-height: 167px;
+
+.spinner-layout {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: $background-color;
+}
+
+.bg-i {
+  width: $spinner-width;
+  height: $spinner-height;
+  background: url('css_sprites.png') -10px -10px;
+}
+
+.bg-n {
+  width: $spinner-width;
+  height: $spinner-height;
+  background: url('css_sprites.png') -164px -10px;
+}
+
+.flip-container {
+  margin: auto;
+  perspective: 1000px;
+}
+
+.flip-container, .front, .back {
+  width: $spinner-width;
+  height: $spinner-height;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}

@@ -1,15 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 import {CarouselModule} from 'angular2-carousel';
 
-import { AppComponent } from './app.component';
-import { AudioPlayerComponent } from '../audio-player/audio-player.component';
+import {AppComponent} from './app.component';
+import {AudioPlayerComponent} from '../audio-player/audio-player.component';
+import {WaitSpinnerComponent} from '../wait-spinner/wait-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    WaitSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -18,4 +20,6 @@ import { AudioPlayerComponent } from '../audio-player/audio-player.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+}

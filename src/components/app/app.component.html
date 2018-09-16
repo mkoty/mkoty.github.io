@@ -1,8 +1,14 @@
 <div class="app-container">
-  <header class="app-container__header">
+  <header *ngIf="contentLoaded"
+          class="app-container__header"
+          [@enterAnimation]>
     <div class="app-container__header-logo"></div>
   </header>
-  <audio-player [songs]="songs">
+  <audio-player *ngIf="contentLoaded"
+                [songs]="songs"
+                [@enterAnimation]>
   </audio-player>
+  <wait-spinner *ngIf="!contentLoaded"
+                [@enterAnimation]></wait-spinner>
 </div>
 
