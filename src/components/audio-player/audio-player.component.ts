@@ -24,6 +24,9 @@ export class AudioPlayerComponent implements AfterViewInit {
     this.currentSongPath = this.songs[this.currentSongIndex].audioSrc;
     this.audioPlayer.nativeElement.src = this.currentSongPath;
     this.audioPlayer.nativeElement.load();
+    this.audioPlayer.nativeElement.onended = () => {
+      this.selectTrack((this.currentSongIndex + 1) % this.songs.length);
+    };
   }
 
   loadAudio(path) {
