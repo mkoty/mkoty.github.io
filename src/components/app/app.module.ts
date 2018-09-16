@@ -6,6 +6,7 @@ import {CarouselModule} from 'angular2-carousel';
 import {AppComponent} from './app.component';
 import {AudioPlayerComponent} from '../audio-player/audio-player.component';
 import {WaitSpinnerComponent} from '../wait-spinner/wait-spinner.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {WaitSpinnerComponent} from '../wait-spinner/wait-spinner.component';
   ],
   imports: [
     BrowserModule,
-    CarouselModule
+    CarouselModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

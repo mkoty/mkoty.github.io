@@ -25,6 +25,14 @@
   background-position-y: center;
 }
 
+.pseudo-image {
+  display: none;
+}
+
+.hide-content {
+  opacity: 0;
+}
+
 @media #{$tablets-and-large} {
   .app-container__header-logo {
     max-width: $header-width;

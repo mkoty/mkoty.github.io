@@ -1,14 +1,16 @@
-<div class="app-container">
-  <header *ngIf="contentLoaded"
-          class="app-container__header"
-          [@enterAnimation]>
+<wait-spinner *ngIf="loadedImages !== songs.length + 1"
+              [@enterAnimation]>
+</wait-spinner>
+
+<div class="app-container"
+     [ngClass]="{'hide-content': loadedImages !== songs.length + 1}">
+  <header class="app-container__header">
+    <img class="pseudo-image"
+         src="../../assets/logo2.png"
+         (load)="onImageLoad()">
     <div class="app-container__header-logo"></div>
   </header>
-  <audio-player *ngIf="contentLoaded"
-                [songs]="songs"
-                [@enterAnimation]>
+  <audio-player [songs]="songs"
+                (imageLoaded)="onImageLoad()">
   </audio-player>
-  <wait-spinner *ngIf="!contentLoaded"
-                [@enterAnimation]></wait-spinner>
 </div>
-

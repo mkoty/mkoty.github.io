@@ -6,6 +6,9 @@
                       [angle]="20">
     <div *ngFor="let song of songs; let i = index"
          class="item-carousel">
+      <img class="pseudo-image"
+           [src]="song.coverSrc"
+           (load)="onImageLoad()">
       <div class="player-container__track-cover"
            [ngClass]="{'selected-track': i === currentSongIndex}"
            [ngStyle]="{'background-image': 'url(' + song.coverSrc + ')'}"

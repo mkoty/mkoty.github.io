@@ -11,12 +11,12 @@ import {songs} from '../../constants/songs';
     trigger(
       'enterAnimation', [
         transition(':enter', [
-          style({transform: 'translateX(100%)', opacity: 0}),
-          animate('400ms', style({transform: 'translateX(0)', opacity: 1}))
+          style({opacity: 0}),
+          animate('900ms', style({opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('400ms', style({transform: 'translateX(100%)', opacity: 0}))
+          style({opacity: 1}),
+          animate('900ms', style({opacity: 0}))
         ])
       ]
     )
@@ -24,12 +24,13 @@ import {songs} from '../../constants/songs';
 })
 export class AppComponent implements OnInit {
   songs = songs;
-  contentLoaded = false;
+  loadedImages = 0;
 
   ngOnInit() {
-    window.onload = () => {
-      this.contentLoaded = true;
-    };
+  }
+
+  onImageLoad() {
+    this.loadedImages++;
   }
 }
 

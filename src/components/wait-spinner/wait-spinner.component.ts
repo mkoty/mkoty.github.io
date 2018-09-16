@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class WaitSpinnerComponent implements OnInit {
 
   counter = 0;
-  delay = 1500;
+  delay = 1000;
 
   constructor() {
   }

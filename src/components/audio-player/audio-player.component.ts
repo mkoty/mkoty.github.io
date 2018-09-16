@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation} from '@angular/core';
 import {CarouselComponent} from 'angular2-carousel';
 import {Song} from '../../Entities/Song';
 
@@ -13,6 +13,8 @@ export class AudioPlayerComponent implements AfterViewInit {
   @Input() songs: Array<Song>;
   @ViewChild('coversCarousel') coversCarousel: CarouselComponent;
   @ViewChild('audioPlayer') audioPlayer: ElementRef<HTMLAudioElement>;
+
+  @Output() imageLoaded: EventEmitter<boolean> = new EventEmitter();
 
   currentSongIndex = 1;
   currentSongPath: string;
@@ -40,6 +42,13 @@ export class AudioPlayerComponent implements AfterViewInit {
     this.currentSongPath = this.songs[newIndex].audioSrc;
     this.coversCarousel.slideTo(newIndex);
     this.loadAudio(this.currentSongPath);
+  }
+
+  onImageLoad() {
+    setTimeout(() => {
+      // debugger
+      this.imageLoaded.emit(true);
+    }, 2000);
   }
 
 }
