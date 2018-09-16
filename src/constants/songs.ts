@@ -13,5 +13,20 @@ export const songs = [
     title: 'Я и Ты (ft. Misёng)',
     audioSrc: '../../assets/tracks/i_and_u.mp3',
     coverSrc: '../../assets/covers/i_and_u.jpg'
+  },
+  {
+    title: '6 дней',
+    audioSrc: '../../assets/tracks/6_days.mp3',
+    coverSrc: '../../assets/covers/6_days.jpg'
+  },
+  {
+    title: 'Песня',
+    audioSrc: '../../assets/tracks/the_song.mp3',
+    coverSrc: '../../assets/covers/the_song.jpg'
+  },
+  {
+    title: 'Зачем?',
+    audioSrc: '../../assets/tracks/why.mp3',
+    coverSrc: '../../assets/covers/why.jpg'
   }
 ];

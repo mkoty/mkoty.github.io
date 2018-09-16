@@ -1,16 +1,20 @@
 <div class="player-container">
-  <carousel-component class="carousel-container"
-                      [initialSlide]="1"
+  <carousel-component #coversCarousel
+                      class="carousel-container"
+                      [initialSlide]="currentSongIndex"
                       [margin]="100"
                       [angle]="20">
-    <div *ngFor="let song of songs" class="item-carousel">
+    <div *ngFor="let song of songs; let i = index"
+         class="item-carousel">
       <div class="player-container__track-cover"
-           [ngStyle]="{'background-image': 'url(' + song.coverSrc + ')'}">
+           [ngClass]="{'selected-track': i === currentSongIndex}"
+           [ngStyle]="{'background-image': 'url(' + song.coverSrc + ')'}"
+           (click)="selectTrack(i)">
       </div>
     </div>
   </carousel-component>
-  <audio class="player-container__audio-player"
-         [src]="songs[1].audioSrc"
+  <audio #audioPlayer
+         class="player-container__audio-player"
          type="audio/mp3"
          controls>
   </audio>
