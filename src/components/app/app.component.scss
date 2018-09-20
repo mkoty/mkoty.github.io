@@ -4,7 +4,7 @@
   text-align:center;
   background-color: $background-color;
   color: white;
-  min-height: 100vh;
+  min-height: $min-height-mobile;
   height: 100%;
 }
 .app-container__header {
@@ -34,6 +34,10 @@
 }
 
 @media #{$tablets-and-large} {
+  .app-container {
+    min-height: $min-height;
+  }
+
   .app-container__header-logo {
     max-width: $header-width;
     min-height: $header-height;
