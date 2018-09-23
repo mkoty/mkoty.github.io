@@ -10,12 +10,14 @@
            [src]="song.coverSrc"
            (load)="onImageLoad()">
       <div class="player-container__track-cover"
-           [ngClass]="{'selected-track': i === currentSongIndex}"
+           [ngClass]="{'player-container__track-cover-selected': i === currentSongIndex && isPlayed, 'player-container__track-cover-highlighted': i === currentSongIndex && isHighlighted && isPlayed}"
            [ngStyle]="{'background-image': 'url(' + song.coverSrc + ')'}"
            (click)="selectTrack(i)">
-        <i class="material-icons player-container__action">
-          {{isPlayed && i === currentSongIndex ? 'pause' : 'play_arrow'}}
-        </i>
+        <div class="icon-container">
+          <i class="material-icons icon-container__icon">
+            {{isPlayed && i === currentSongIndex ? 'pause' : 'play_arrow'}}
+          </i>
+        </div>
       </div>
     </div>
   </carousel-component>

@@ -19,6 +19,7 @@ export class AudioPlayerComponent implements AfterViewInit {
   currentSongIndex = 1;
   currentProgressWidth = 0;
   isPlayed = false;
+  isHighlighted = false;
   currentSongPath: string;
 
   constructor() {
@@ -42,15 +43,21 @@ export class AudioPlayerComponent implements AfterViewInit {
     this.audioPlayer.nativeElement.src = path;
     this.audioPlayer.nativeElement.load();
     this.audioPlayer.nativeElement.play();
-    this.isPlayed = true;
+    this.isPlayed = false;
+    this.isHighlighted = false;
   }
 
   onPlay() {
     this.isPlayed = true;
+
+    setTimeout(() => {
+      this.isHighlighted = true;
+    }, 400);
   }
 
   onPause() {
     this.isPlayed = false;
+    this.isHighlighted = false;
   }
 
   selectTrack(newIndex: number) {
