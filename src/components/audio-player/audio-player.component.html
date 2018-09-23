@@ -13,12 +13,39 @@
            [ngClass]="{'selected-track': i === currentSongIndex}"
            [ngStyle]="{'background-image': 'url(' + song.coverSrc + ')'}"
            (click)="selectTrack(i)">
+        <i class="material-icons player-container__action">
+          {{isPlayed && i === currentSongIndex ? 'pause' : 'play_arrow'}}
+        </i>
       </div>
     </div>
   </carousel-component>
+
+  <div class="audio-controls">
+    <div class="main-action-line">
+      <div class="progress-bar">
+        <div class="progress-bar__all-time"></div>
+        <div class="progress-bar__curret-time" [ngStyle]="{'width': currentProgressWidth + '%'}"></div>
+      </div>
+
+      <!--<button mat-icon-button-->
+              <!--[matMenuTriggerFor]="menu">-->
+        <!--<mat-icon>volume_up</mat-icon>-->
+      <!--</button>-->
+      <!--<mat-menu #menu="matMenu">-->
+        <!--<button mat-menu-item>-->
+          <!--<mat-icon>dialpad</mat-icon>-->
+          <!--<span>Redial</span>-->
+        <!--</button>-->
+        <!--<mat-slider min="0" max="100" vertical></mat-slider>-->
+      <!--</mat-menu>-->
+    </div>
+  </div>
+
   <audio #audioPlayer
-         class="player-container__audio-player"
+         class="audio-player"
          type="audio/mp3"
+         (play)="onPlay()"
+         (pause)="onPause()"
          controls>
   </audio>
 </div>

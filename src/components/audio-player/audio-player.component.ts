@@ -17,6 +17,8 @@ export class AudioPlayerComponent implements AfterViewInit {
   @Output() imageLoaded: EventEmitter<boolean> = new EventEmitter();
 
   currentSongIndex = 1;
+  currentProgressWidth = 0;
+  isPlayed = false;
   currentSongPath: string;
 
   constructor() {
@@ -24,10 +26,15 @@ export class AudioPlayerComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.currentSongPath = this.songs[this.currentSongIndex].audioSrc;
-    this.audioPlayer.nativeElement.src = this.currentSongPath;
-    this.audioPlayer.nativeElement.load();
-    this.audioPlayer.nativeElement.onended = () => {
+    const player = this.audioPlayer.nativeElement;
+    player.src = this.currentSongPath;
+    player.load();
+    player.onended = () => {
+      this.currentProgressWidth = 0;
       this.selectTrack((this.currentSongIndex + 1) % this.songs.length);
+    };
+    player.ontimeupdate = () => {
+      this.currentProgressWidth = player.currentTime / player.duration * 100;
     };
   }
 
@@ -35,9 +42,28 @@ export class AudioPlayerComponent implements AfterViewInit {
     this.audioPlayer.nativeElement.src = path;
     this.audioPlayer.nativeElement.load();
     this.audioPlayer.nativeElement.play();
+    this.isPlayed = true;
+  }
+
+  onPlay() {
+    this.isPlayed = true;
+  }
+
+  onPause() {
+    this.isPlayed = false;
   }
 
   selectTrack(newIndex: number) {
+    if (this.currentSongIndex === newIndex) {
+      const player = this.audioPlayer.nativeElement;
+      if (player.paused) {
+        player.play();
+      } else {
+        player.pause();
+      }
+
+      return;
+    }
     this.currentSongIndex = newIndex;
     this.currentSongPath = this.songs[newIndex].audioSrc;
     this.coversCarousel.slideTo(newIndex);
@@ -45,10 +71,7 @@ export class AudioPlayerComponent implements AfterViewInit {
   }
 
   onImageLoad() {
-    setTimeout(() => {
-      // debugger
-      this.imageLoaded.emit(true);
-    }, 2000);
+    this.imageLoaded.emit(true);
   }
 
 }

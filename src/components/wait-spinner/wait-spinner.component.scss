@@ -16,13 +16,13 @@ $spinner-height: 167px;
 .bg-i {
   width: $spinner-width;
   height: $spinner-height;
-  background: url('css_sprites.png') -10px -10px;
+  background: url('../../assets/css_sprites.png') -10px -10px;
 }
 
 .bg-n {
   width: $spinner-width;
   height: $spinner-height;
-  background: url('css_sprites.png') -164px -10px;
+  background: url('../../assets/css_sprites.png') -164px -10px;
 }
 
 .flip-container {

@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {AudioPlayerComponent} from '../audio-player/audio-player.component';
 import {WaitSpinnerComponent} from '../wait-spinner/wait-spinner.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatIconModule, MatMenuModule, MatSliderModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
