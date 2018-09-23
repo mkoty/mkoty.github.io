@@ -13,7 +13,7 @@
   background-size: cover;
   margin: auto;
   border-radius: 3px;
-  transition: width .3s, height .3s, box-shadow 1s ease;
+  transition: width .3s, height .3s, box-shadow .4s ease;
   box-shadow: inset 0px 0px 8px 4px $background-color;
   display: flex;
 }
@@ -76,7 +76,7 @@
   width: 100%;
 }
 
-.progress-bar__all-time, .progress-bar__curret-time {
+.progress-bar__all-time, .progress-bar__current-time {
   height: 4px;
   background-color: $light-color;
   border-radius: 2px;
@@ -87,7 +87,7 @@
   opacity: 0.2;
 }
 
-.progress-bar__curret-time {
+.progress-bar__current-time {
   position: relative;
   top: -4px;
 }
@@ -119,9 +119,13 @@
   }
 
   .player-container__track-cover-selected {
-    box-shadow: none;
+    box-shadow: inset 0px 0px 8px 4px $background-color;
     width: $active-cover-size;
     height: $active-cover-size;
+  }
+
+  .player-container__track-cover-selected.player-container__track-cover-played {
+    box-shadow: none;
   }
 
   .player-container {

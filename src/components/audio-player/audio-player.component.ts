@@ -52,7 +52,7 @@ export class AudioPlayerComponent implements AfterViewInit {
 
     setTimeout(() => {
       this.isHighlighted = true;
-    }, 400);
+    }, 200);
   }
 
   onPause() {

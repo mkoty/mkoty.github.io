@@ -10,7 +10,10 @@
            [src]="song.coverSrc"
            (load)="onImageLoad()">
       <div class="player-container__track-cover"
-           [ngClass]="{'player-container__track-cover-selected': i === currentSongIndex && isPlayed, 'player-container__track-cover-highlighted': i === currentSongIndex && isHighlighted && isPlayed}"
+           [ngClass]="{'player-container__track-cover-selected': i === currentSongIndex,
+            'player-container__track-cover-played': i === currentSongIndex && isPlayed,
+            'player-container__track-cover-highlighted': i === currentSongIndex && isHighlighted
+            }"
            [ngStyle]="{'background-image': 'url(' + song.coverSrc + ')'}"
            (click)="selectTrack(i)">
         <div class="icon-container">
@@ -26,7 +29,7 @@
     <div class="main-action-line">
       <div class="progress-bar">
         <div class="progress-bar__all-time"></div>
-        <div class="progress-bar__curret-time" [ngStyle]="{'width': currentProgressWidth + '%'}"></div>
+        <div class="progress-bar__current-time" [ngStyle]="{'width': currentProgressWidth + '%'}"></div>
       </div>
     </div>
   </div>
