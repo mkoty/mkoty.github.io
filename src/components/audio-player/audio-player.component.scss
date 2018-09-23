@@ -21,6 +21,7 @@
 .icon-container {
   opacity: 0.6;
   color: $light-color;
+  text-shadow: 0px 0px 10px $background-color;
   margin: auto;
 }
 
@@ -163,6 +164,7 @@
     margin: auto;
     opacity: 0;
     color: transparent;
+    text-shadow: none;
   }
 }
 
