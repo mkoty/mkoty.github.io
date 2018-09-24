@@ -34,12 +34,9 @@
              [ngStyle]="{'width': currentProgressWidth + '%'}">
         </div>
       </div>
-      <div class="volume-control">
-        <i class="material-icons volume-control__volume-icon desktop"
+      <div class="volume-control desktop">
+        <i class="material-icons volume-control__volume-icon"
            (click)="muteVolume()">
-          {{currentVolumeHeight > 35 && !isMuted ? 'volume_up' : currentVolumeHeight > 0 && !isMuted ? 'volume_down' : 'volume_off'}}
-        </i>
-        <i class="material-icons volume-control__volume-icon mobile">
           {{currentVolumeHeight > 35 && !isMuted ? 'volume_up' : currentVolumeHeight > 0 && !isMuted ? 'volume_down' : 'volume_off'}}
         </i>
         <div class="volume-slider-container">
