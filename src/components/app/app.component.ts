@@ -25,6 +25,7 @@ import {songs} from '../../constants/songs';
 export class AppComponent implements OnInit {
   songs = songs;
   loadedImages = 0;
+  ownImagesOnPage = 3;
 
   ngOnInit() {
   }

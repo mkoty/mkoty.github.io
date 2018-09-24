@@ -1,9 +1,9 @@
-<wait-spinner *ngIf="loadedImages !== songs.length + 1"
+<wait-spinner *ngIf="loadedImages < songs.length + ownImagesOnPage"
               [@enterAnimation]>
 </wait-spinner>
 
 <div class="app-container"
-     [ngClass]="{'hide-content': loadedImages !== songs.length + 1}">
+     [ngClass]="{'hide-content': loadedImages < songs.length + ownImagesOnPage}">
   <header class="app-container__header">
     <img class="pseudo-image"
          src="../../assets/logo2.png"
@@ -13,4 +13,20 @@
   <audio-player [songs]="songs"
                 (imageLoaded)="onImageLoad()">
   </audio-player>
+  <footer>
+    <div class="social-icons">
+      <a target="_blank" rel="noopener noreferrer" href="https://vk.com/stipan_project">
+        <img class="pseudo-image"
+             src="../../assets/vk.svg"
+             (load)="onImageLoad()">
+        <div class="social-icons__vk" ></div>
+      </a>
+      <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/stipan_project">
+        <img class="pseudo-image"
+             src="../../assets/soundcloud.png"
+             (load)="onImageLoad()">
+        <div class="social-icons__soundcloud" ></div>
+      </a>
+    </div>
+  </footer>
 </div>

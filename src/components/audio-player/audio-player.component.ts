@@ -1,4 +1,13 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import {CarouselComponent} from 'angular2-carousel';
 import {Song} from '../../Entities/Song';
 
@@ -8,7 +17,7 @@ import {Song} from '../../Entities/Song';
   styleUrls: ['./audio-player.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AudioPlayerComponent implements AfterViewInit {
+export class AudioPlayerComponent implements AfterContentInit {
 
   @Input() songs: Array<Song>;
   @ViewChild('coversCarousel') coversCarousel: CarouselComponent;
@@ -28,7 +37,7 @@ export class AudioPlayerComponent implements AfterViewInit {
   constructor() {
   }
 
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     this.currentSongPath = this.songs[this.currentSongIndex].audioSrc;
     const player = this.audioPlayer.nativeElement;
     player.src = this.currentSongPath;

@@ -33,6 +33,38 @@
   opacity: 0;
 }
 
+footer {
+  display: flex;
+}
+
+.social-icons {
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+
+  > * {
+    opacity: 0.6;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.social-icons__vk {
+  background: url('../../assets/vk.svg') no-repeat 50% / contain;
+  height: 19px;
+  width: 34px;
+}
+
+.social-icons__soundcloud {
+  background: url('../../assets/soundcloud.png') no-repeat 50% / contain;
+  height: 30px;
+  width: 50px;
+  margin-left: 20px;
+}
+
 @media #{$tablets-and-large} {
   .app-container {
     min-height: $min-height;

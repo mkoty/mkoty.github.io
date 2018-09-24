@@ -129,7 +129,7 @@
 
 .volume-control__volume-icon {
   padding-bottom: 3px;
-  opacity: 0.25;
+  opacity: 0.4;
   transition: opacity .3s;
   cursor: pointer;
 }
@@ -181,7 +181,7 @@
   }
 
   .audio-controls {
-    padding: 70px 0 30px;
+    padding: 70px 0;
   }
 
   .player-container__track-cover-highlighted {
