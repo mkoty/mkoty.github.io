@@ -82,12 +82,18 @@
 
 .progress-bar {
   width: 100%;
+  cursor: pointer;
 }
 
 .progress-bar__all-time, .progress-bar__current-time {
   height: 4px;
   background-color: $light-color;
   border-radius: 2px;
+  pointer-events: none;
+}
+
+.slider__full-scale, .progress-bar__all-time {
+  opacity: 0.2;
 }
 
 .progress-bar__all-time {
@@ -98,6 +104,73 @@
 .progress-bar__current-time {
   position: relative;
   top: -4px;
+}
+
+.volume-control {
+  position: relative;
+
+  &:hover {
+    .volume-control__volume-icon {
+      opacity: 1;
+
+      &:hover {
+
+      }
+    }
+
+    .volume-slider-container {
+      display: flex;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.volume-control__volume-icon {
+  margin-left: 15px;
+  padding-bottom: 3px;
+  opacity: 0.4;
+  transition: opacity .3s;
+  cursor: pointer;
+}
+
+.volume-slider-container {
+  display: flex;
+  z-index: -1;
+  opacity: 0;
+  width: 30px;
+  height: 80px;
+  transition: opacity .3s;
+  position: absolute;
+  top: -80px;
+  left: 10px;
+  border: 1px solid rgba($light-color, 0.4);
+  border-radius: 4px;
+  background-color: $background-color;
+}
+
+.slider {
+  height: calc(100% - 10px);
+  width: 8px;
+  padding-left: 4px;
+  border-radius: 2px;
+  margin: auto;
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.slider__full-scale, .slider__current-volume {
+  background-color: $light-color;
+  height: 100%;
+  width: 4px;
+  border-radius: 2px;
+}
+
+.slider__current-volume {
+  pointer-events: none;
+  position: relative;
+  left: -4px;
 }
 
 @media #{$tablets-and-large} {

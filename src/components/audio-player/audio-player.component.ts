@@ -13,12 +13,15 @@ export class AudioPlayerComponent implements AfterViewInit {
   @Input() songs: Array<Song>;
   @ViewChild('coversCarousel') coversCarousel: CarouselComponent;
   @ViewChild('audioPlayer') audioPlayer: ElementRef<HTMLAudioElement>;
+  @ViewChild('volume') volume: ElementRef;
 
   @Output() imageLoaded: EventEmitter<boolean> = new EventEmitter();
 
   currentSongIndex = 1;
   currentProgressWidth = 0;
+  currentVolumeHeight = 0;
   isPlayed = false;
+  isMuted = false;
   isHighlighted = false;
   currentSongPath: string;
 
@@ -37,6 +40,8 @@ export class AudioPlayerComponent implements AfterViewInit {
     player.ontimeupdate = () => {
       this.currentProgressWidth = player.currentTime / player.duration * 100;
     };
+
+    this.currentVolumeHeight = this.volume.nativeElement.offsetHeight * player.volume;
   }
 
   loadAudio(path) {
@@ -58,6 +63,35 @@ export class AudioPlayerComponent implements AfterViewInit {
   onPause() {
     this.isPlayed = false;
     this.isHighlighted = false;
+  }
+
+  goToTime(event) {
+    const lineSizes = event.currentTarget.getBoundingClientRect();
+    const position = event.offsetX / lineSizes.width;
+    const player = this.audioPlayer.nativeElement;
+    player.currentTime = player.duration * position;
+  }
+
+  setVolume(event) {
+    const lineSizes = event.currentTarget.getBoundingClientRect();
+    const volume = 1 - event.offsetY / lineSizes.height;
+    const player = this.audioPlayer.nativeElement;
+    if (volume > 0.1) {
+      player.volume = volume;
+      this.currentVolumeHeight = lineSizes.height - event.offsetY;
+    } else {
+      player.volume = 0;
+      this.currentVolumeHeight = 0;
+    }
+  }
+
+  muteVolume() {
+    this.isMuted = !this.isMuted;
+    if (this.isMuted) {
+      this.audioPlayer.nativeElement.volume = 0;
+    } else {
+      this.audioPlayer.nativeElement.volume = this.currentVolumeHeight / this.volume.nativeElement.offsetHeight;
+    }
   }
 
   selectTrack(newIndex: number) {

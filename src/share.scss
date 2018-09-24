@@ -15,3 +15,21 @@ $header-height: 200px;
 $header-width-mobile: 350px;
 $header-height-mobile: 150px;
 
+
+.mobile {
+  display: flex !important;
+}
+
+.desktop {
+  display: none !important;
+}
+
+@media #{$tablets-and-large} {
+  .mobile {
+    display: none !important;
+  }
+
+  .desktop {
+    display: flex !important;
+  }
+}

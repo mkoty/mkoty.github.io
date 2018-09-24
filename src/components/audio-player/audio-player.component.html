@@ -27,9 +27,31 @@
 
   <div class="audio-controls">
     <div class="main-action-line">
-      <div class="progress-bar">
+      <div class="progress-bar"
+           (click)="goToTime($event)">
         <div class="progress-bar__all-time"></div>
-        <div class="progress-bar__current-time" [ngStyle]="{'width': currentProgressWidth + '%'}"></div>
+        <div class="progress-bar__current-time"
+             [ngStyle]="{'width': currentProgressWidth + '%'}">
+        </div>
+      </div>
+      <div class="volume-control">
+        <i class="material-icons volume-control__volume-icon desktop"
+           (click)="muteVolume()">
+          {{currentVolumeHeight > 35 && !isMuted ? 'volume_up' : currentVolumeHeight > 0 && !isMuted ? 'volume_down' : 'volume_off'}}
+        </i>
+        <i class="material-icons volume-control__volume-icon mobile">
+          {{currentVolumeHeight > 35 && !isMuted ? 'volume_up' : currentVolumeHeight > 0 && !isMuted ? 'volume_down' : 'volume_off'}}
+        </i>
+        <div class="volume-slider-container">
+          <div class="slider"
+               (click)="setVolume($event)">
+            <div #volume
+                 class="slider__full-scale">
+            </div>
+            <div class="slider__current-volume"
+                 [ngStyle]="{'height': isMuted ? 0 : currentVolumeHeight + 'px'}"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
