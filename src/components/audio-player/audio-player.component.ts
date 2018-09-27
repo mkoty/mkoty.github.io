@@ -92,6 +92,7 @@ export class AudioPlayerComponent implements AfterContentInit {
       player.volume = 0;
       this.currentVolumeHeight = 0;
     }
+    this.isMuted = false;
   }
 
   muteVolume() {
