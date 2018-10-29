@@ -5,6 +5,11 @@ export const songs = [
     coverSrc: '../../assets/covers/the_song.jpg'
   },
   {
+    title: 'Победа',
+    audioSrc: '../../assets/tracks/victory.mp3',
+    coverSrc: '../../assets/covers/victory.jpg'
+  },
+  {
     title: 'На Волне',
     audioSrc: '../../assets/tracks/na_volne.mp3',
     coverSrc: '../../assets/covers/na_volne.jpg'
