@@ -1,10 +1,5 @@
 export const songs = [
   {
-    title: 'Песня',
-    audioSrc: '../../assets/tracks/the_song.mp3',
-    coverSrc: '../../assets/covers/the_song.jpg'
-  },
-  {
     title: 'Победа',
     audioSrc: '../../assets/tracks/victory.mp3',
     coverSrc: '../../assets/covers/victory.jpg'
@@ -18,6 +13,11 @@ export const songs = [
     title: 'I\'m Russian (I\'m Ok)',
     audioSrc: '../../assets/tracks/Im_Russian(Im_OK).mp3',
     coverSrc: '../../assets/covers/Im_russian.jpg'
+  },
+  {
+    title: 'Песня',
+    audioSrc: '../../assets/tracks/the_song.mp3',
+    coverSrc: '../../assets/covers/the_song.jpg'
   },
   {
     title: 'Право любить (ft. Nastя Donut)',
