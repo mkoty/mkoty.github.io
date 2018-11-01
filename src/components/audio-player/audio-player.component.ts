@@ -26,7 +26,7 @@ export class AudioPlayerComponent implements AfterContentInit {
 
   @Output() imageLoaded: EventEmitter<boolean> = new EventEmitter();
 
-  currentSongIndex = 1;
+  currentSongIndex = 0;
   currentProgressWidth = 0;
   currentVolumeHeight = 0;
   isPlayed = false;
