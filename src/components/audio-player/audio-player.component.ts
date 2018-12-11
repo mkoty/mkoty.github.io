@@ -9,7 +9,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {CarouselComponent} from 'angular2-carousel';
-import {Song} from '../../Entities/Song';
+import {Song} from '../../entities/Song';
 
 @Component({
   selector: 'audio-player',
