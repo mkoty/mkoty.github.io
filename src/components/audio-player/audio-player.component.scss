@@ -127,11 +127,17 @@
   }
 }
 
-.volume-control__volume-icon {
-  padding-bottom: 3px;
+.volume-control__volume-icon, .action-button {
+  padding-bottom: 4px;
   opacity: 0.4;
   transition: opacity .3s;
   cursor: pointer;
+}
+
+.action-button {
+  margin-right: 0;
+  position: relative;
+  left: -12px;
 }
 
 .volume-slider-container {
@@ -220,6 +226,11 @@
   .audio-controls, .main-action-line {
     max-width: 900px;
     width: calc(100% - 200px);
+  }
+
+  .action-button {
+    margin-right: 30px;
+    position: unset;
   }
 
   .player-container__track-cover {

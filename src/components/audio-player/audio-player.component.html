@@ -27,6 +27,10 @@
 
   <div class="audio-controls">
     <div class="main-action-line">
+      <i class="material-icons action-button"
+         (click)="selectTrack(currentSongIndex)">
+        {{isPlayed ? 'pause' : 'play_arrow'}}
+      </i>
       <div class="progress-bar"
            (click)="goToTime($event)">
         <div class="progress-bar__all-time"></div>
