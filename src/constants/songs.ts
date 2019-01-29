@@ -1,5 +1,10 @@
 export const songs = [
   {
+    title: 'Asian Girl',
+    audioSrc: '../../assets/tracks/asian_girl.mp3',
+    coverSrc: '../../assets/covers/asian_girl.png'
+  },
+  {
     title: 'Очень модная песня (О тревожной молодости)',
     audioSrc: '../../assets/tracks/modnaya_pesnya.mp3',
     coverSrc: '../../assets/covers/modnaya_pesnya.jpg'
