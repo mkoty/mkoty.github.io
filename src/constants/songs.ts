@@ -1,5 +1,10 @@
 export const songs = [
   {
+    title: 'На пару дней',
+    audioSrc: '../../assets/tracks/na_paru.mp3',
+    coverSrc: '../../assets/covers/na_paru.jpg'
+  },
+  {
     title: 'Asian Girl',
     audioSrc: '../../assets/tracks/asian_girl.mp3',
     coverSrc: '../../assets/covers/asian_girl.png'
