@@ -1,8 +1,8 @@
 export const songs = [
   {
     title: 'Песни без любви',
-    audioSrc: '../../assets/tracks/pesni_bez.mp3',
-    coverSrc: '../../assets/covers/pesni_bez.jpg'
+    audioSrc: '../../assets/tracks/pesni_bez_lubvi.mp3',
+    coverSrc: '../../assets/covers/pesni_bez_lubvi.jpg'
   },
   {
     title: 'На пару дней',
