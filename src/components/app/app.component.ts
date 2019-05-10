@@ -28,8 +28,9 @@ export class AppComponent implements OnInit {
   ownImagesOnPage = 3;
   timeInSeconds = 0;
   showWaitSpinner = true;
+  shownElement = 'video';
 
-  constructor(public router: Router) {
+  constructor() {
   }
 
   ngOnInit() {

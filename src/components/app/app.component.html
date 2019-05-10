@@ -1,9 +1,9 @@
-<wait-spinner *ngIf="showWaitSpinner || router.url.includes('audio') && loadedImages < songs.length + ownImagesOnPage"
+<wait-spinner *ngIf="showWaitSpinner || shownElement === 'audio' && loadedImages < songs.length + ownImagesOnPage"
               [@enterAnimation]>
 </wait-spinner>
 
 <div class="app-container"
-     [ngClass]="{'hide-content': showWaitSpinner || router.url.includes('audio') && loadedImages < songs.length + ownImagesOnPage}">
+     [ngClass]="{'hide-content': showWaitSpinner || shownElement === 'audio' && loadedImages < songs.length + ownImagesOnPage}">
   <header class="app-container__header">
     <img class="pseudo-image"
          src="../../assets/logo2.png"
@@ -13,13 +13,13 @@
   <div class="menu-panel flex">
     <div class="menu-element-container flex flex-row margin-auto">
       <div class="menu-element"
-           [ngClass]="{'active': router.url.includes('video')}"
-           routerLink="video">
+           [ngClass]="{'active': shownElement === 'video'}"
+           (click)="shownElement = 'video'">
         video
       </div>
       <div class="menu-element"
-           [ngClass]="{'active': router.url.includes('audio')}"
-           routerLink="audio">
+           [ngClass]="{'active': shownElement === 'audio'}"
+           (click)="shownElement = 'audio'">
         audio
       </div>
     </div>
@@ -27,11 +27,11 @@
   <div class="main-content-container flex">
 
     <div class="players">
-      <audio-player *ngIf="router.url.includes('audio')"
+      <audio-player *ngIf="shownElement === 'audio'"
                     [songs]="songs"
                     (imageLoaded)="onImageLoad()">
       </audio-player>
-      <video-player *ngIf="router.url.includes('video')">
+      <video-player *ngIf="shownElement === 'video'">
       </video-player>
     </div>
   </div>
