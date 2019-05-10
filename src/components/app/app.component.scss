@@ -1,12 +1,13 @@
 @import '../../share';
 
 .app-container {
-  text-align:center;
+  text-align: center;
   background-color: $background-color;
   color: white;
   min-height: $min-height-mobile;
   height: 100%;
 }
+
 .app-container__header {
   background-color: $background-color;
   display: flex;
@@ -41,15 +42,36 @@ footer {
   margin: 0 auto 30px;
   display: flex;
   align-items: center;
+}
 
-  > * {
-    opacity: 0.6;
-    transition: opacity .3s;
+.social-icons-link, .menu-element {
+  opacity: 0.3;
+  transition: opacity .3s;
 
-    &:hover {
-      opacity: 1;
-    }
+  &:hover, &.active {
+    opacity: .7;
   }
+}
+
+.menu-panel {
+  margin: 0 0 20px 0;
+}
+
+.menu-element {
+  cursor: pointer;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.menu-element + .menu-element {
+  margin-left: 40px;
+}
+
+.players {
+  margin: 20px auto 0;
 }
 
 .social-icons__vk {
@@ -68,6 +90,31 @@ footer {
 @media #{$tablets-and-large} {
   .app-container {
     min-height: $min-height;
+  }
+
+  .main-content-container {
+    min-height: 510px;
+    width: 100%;
+  }
+
+  .players {
+    width: 100%;
+  }
+
+  .menu-panel {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-transform: uppercase;
+    margin: 0 30px;
+    font-size: 26px;
+    z-index: 5;
+  }
+
+  .menu-element + .menu-element {
+    margin-top: 40px;
   }
 
   .app-container__header-logo {

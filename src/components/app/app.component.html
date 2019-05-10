@@ -1,31 +1,59 @@
-<wait-spinner *ngIf="loadedImages < songs.length + ownImagesOnPage"
+<wait-spinner *ngIf="showWaitSpinner || router.url.includes('audio') && loadedImages < songs.length + ownImagesOnPage"
               [@enterAnimation]>
 </wait-spinner>
 
 <div class="app-container"
-     [ngClass]="{'hide-content': loadedImages < songs.length + ownImagesOnPage}">
+     [ngClass]="{'hide-content': showWaitSpinner || router.url.includes('audio') && loadedImages < songs.length + ownImagesOnPage}">
   <header class="app-container__header">
     <img class="pseudo-image"
          src="../../assets/logo2.png"
          (load)="onImageLoad()">
     <div class="app-container__header-logo"></div>
   </header>
-  <audio-player [songs]="songs"
-                (imageLoaded)="onImageLoad()">
-  </audio-player>
+  <div class="menu-panel flex">
+    <div class="menu-element-container flex flex-row margin-auto">
+      <div class="menu-element"
+           [ngClass]="{'active': router.url.includes('video')}"
+           routerLink="video">
+        video
+      </div>
+      <div class="menu-element"
+           [ngClass]="{'active': router.url.includes('audio')}"
+           routerLink="audio">
+        audio
+      </div>
+    </div>
+  </div>
+  <div class="main-content-container flex">
+
+    <div class="players">
+      <audio-player *ngIf="router.url.includes('audio')"
+                    [songs]="songs"
+                    (imageLoaded)="onImageLoad()">
+      </audio-player>
+      <video-player *ngIf="router.url.includes('video')">
+      </video-player>
+    </div>
+  </div>
   <footer>
     <div class="social-icons">
-      <a target="_blank" rel="noopener noreferrer" href="https://vk.com/stipan_project">
+      <a class="social-icons-link"
+         target="_blank"
+         rel="noopener noreferrer"
+         href="https://vk.com/stipan_project">
         <img class="pseudo-image"
              src="../../assets/vk.svg"
              (load)="onImageLoad()">
-        <div class="social-icons__vk" ></div>
+        <div class="social-icons__vk"></div>
       </a>
-      <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/stipan_project">
+      <a class="social-icons-link"
+         target="_blank"
+         rel="noopener noreferrer"
+         href="https://soundcloud.com/stipan_project">
         <img class="pseudo-image"
              src="../../assets/soundcloud.png"
              (load)="onImageLoad()">
-        <div class="social-icons__soundcloud" ></div>
+        <div class="social-icons__soundcloud"></div>
       </a>
     </div>
   </footer>

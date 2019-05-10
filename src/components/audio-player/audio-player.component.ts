@@ -8,7 +8,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import {CarouselComponent} from 'angular2-carousel';
+import {CarouselComponent} from 'ngx-carousel-lib';
 import {Song} from '../../entities/Song';
 
 @Component({
