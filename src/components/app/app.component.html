@@ -1,15 +1,19 @@
-<wait-spinner *ngIf="showWaitSpinner || shownElement === 'audio' && loadedImages < songs.length + ownImagesOnPage"
+<wait-spinner *ngIf="showWaitSpinner"
               [@enterAnimation]>
 </wait-spinner>
 
 <div class="app-container"
-     [ngClass]="{'hide-content': showWaitSpinner || shownElement === 'audio' && loadedImages < songs.length + ownImagesOnPage}">
+     [ngClass]="{'hide-content': showWaitSpinner}">
   <header class="app-container__header">
     <img class="pseudo-image"
          src="../../assets/logo2.png"
          (load)="onImageLoad()">
     <div class="app-container__header-logo"></div>
   </header>
+  <img class="pseudo-image"
+       *ngFor="let song of songs"
+       [src]="song.coverSrc"
+       (load)="onImageLoad()">
   <div class="menu-panel flex">
     <div class="menu-element-container flex flex-row margin-auto">
       <div class="menu-element"
