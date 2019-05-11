@@ -31,10 +31,13 @@
   <div class="main-content-container flex">
 
     <div class="players">
-      <audio-player *ngIf="shownElement === 'audio'"
-                    [songs]="songs"
-                    (imageLoaded)="onImageLoad()">
-      </audio-player>
+      <div *ngIf="shownElement === 'audio'"
+           class="audio-container">
+        <audio-player [songs]="songs"
+                      (imageLoaded)="onImageLoad()">
+        </audio-player>
+      </div>
+
       <video-player *ngIf="shownElement === 'video'">
       </video-player>
     </div>

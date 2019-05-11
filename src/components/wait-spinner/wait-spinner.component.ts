@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'wait-spinner',
@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./wait-spinner.component.scss']
 })
 export class WaitSpinnerComponent implements OnInit {
+  @Input() width = null;
+  @Input() height = null;
 
   counter = 0;
   delay = 1000;

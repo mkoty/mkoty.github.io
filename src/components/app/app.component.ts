@@ -34,14 +34,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.waitSpinnerTimer();
+    this.waitSpinnerTimer(3);
   }
 
-  waitSpinnerTimer() {
+  waitSpinnerTimer(time: number) {
     setTimeout(() => {
       this.timeInSeconds++;
-      if (this.timeInSeconds < 3) {
-        this.waitSpinnerTimer();
+      if (this.timeInSeconds < time) {
+        this.waitSpinnerTimer(time);
       } else {
         this.showWaitSpinner = false;
       }

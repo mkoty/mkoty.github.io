@@ -1,6 +1,36 @@
 @import "../../share";
 
 .video-player {
-  margin: 10px auto 20px;
   max-width: 100%;
+}
+
+.tablet-spinner {
+  display: none;
+}
+
+.frame-image {
+  display: none;
+}
+
+@media #{$tablets-and-large} {
+  .frame-image {
+    display: unset;
+    pointer-events: none;
+    position: absolute;
+    max-width:100%;
+    max-height:100%;
+  }
+
+  .video-player {
+    margin: 65px;
+  }
+
+  .tablet-spinner {
+    display: unset;
+    transform: translateX(-50%) translateY(-50%);
+    width: 720px;
+    height: 405px;
+    top: 50%;
+    left: 50%;
+  }
 }

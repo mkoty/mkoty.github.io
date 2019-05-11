@@ -1,10 +1,24 @@
-<div class="video-player-container flex flex-column">
-  <iframe class="video-player"
-          width="720"
-          height="405"
-          src="https://www.youtube.com/embed/Dgd7ePKOjh8"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
+<div class="video-player-container relative">
+
+  <div class="elements margin-auto relative">
+    <img class="frame-image margin-auto"
+         width="850"
+         height="636"
+         src="../../assets/tablet.png">
+    <wait-spinner class="tablet-spinner absolute"
+                  *ngIf="showWaitSpinner || !iFrameLoaded"
+                  [width]="'720px'"
+                  [height]="'405px'">
+    </wait-spinner>
+    <iframe class="video-player"
+            width="720"
+            height="405"
+            src="https://www.youtube.com/embed/Dgd7ePKOjh8"
+            frameborder="0"
+            allowfullscreen
+            (load)="iFrameLoaded = true">
+    </iframe>
+  </div>
+
 </div>
 
