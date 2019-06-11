@@ -1,5 +1,10 @@
 export const songs = [
   {
+    title: 'Лето',
+    audioSrc: '../../assets/tracks/leto.mp3',
+    coverSrc: '../../assets/covers/leto.jpg'
+  },
+  {
     title: 'Песни без любви',
     audioSrc: '../../assets/tracks/pesni_bez_lubvi.mp3',
     coverSrc: '../../assets/covers/pesni_bez_lubvi.jpg'
