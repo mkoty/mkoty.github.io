@@ -1,5 +1,15 @@
 export const songs = [
   {
+    title: '... к ветру',
+    audioSrc: '../../assets/tracks/wind.mp3',
+    coverSrc: '../../assets/covers/wind.jpg'
+  },
+  {
+    title: 'Rap & YouTube',
+    audioSrc: '../../assets/tracks/rap.mp3',
+    coverSrc: '../../assets/covers/rap.jpg'
+  },
+  {
     title: 'Яблони',
     audioSrc: '../../assets/tracks/jabloni.mp3',
     coverSrc: '../../assets/covers/jabloni.jpg'
