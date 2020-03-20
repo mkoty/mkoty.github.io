@@ -1,5 +1,10 @@
 export const songs = [
   {
+    title: 'Ланфрен-ланфра',
+    audioSrc: '../../assets/tracks/lanfren.mp3',
+    coverSrc: '../../assets/covers/lanfren.jpg'
+  },
+  {
     title: '... к ветру',
     audioSrc: '../../assets/tracks/wind.mp3',
     coverSrc: '../../assets/covers/wind.jpg'
