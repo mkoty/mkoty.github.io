@@ -1,5 +1,10 @@
 export const songs = [
   {
+    title: 'Город',
+    audioSrc: '../../assets/tracks/gorod.mp3',
+    coverSrc: '../../assets/covers/gorod.jpg'
+  },
+  {
     title: 'Импичмент Разина',
     audioSrc: '../../assets/tracks/razin.mp3',
     coverSrc: '../../assets/covers/razin.jpg'
