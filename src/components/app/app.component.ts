@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   ownImagesOnPage = 3;
   timeInSeconds = 0;
   showWaitSpinner = true;
-  shownElement = 'video';
+  shownElement = 'audio';
 
   constructor() {
   }
