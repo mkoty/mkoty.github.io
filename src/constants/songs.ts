@@ -1,5 +1,30 @@
 export const songs = [
   {
+    title: 'Катя',
+    audioSrc: '../../assets/tracks/katya.mp3',
+    coverSrc: '../../assets/covers/katya.jpg'
+  },
+  {
+    title: 'Одинокий вайнах',
+    audioSrc: '../../assets/tracks/vainah.mp3',
+    coverSrc: '../../assets/covers/vainah.jpg'
+  },
+  {
+    title: 'Розенбаум',
+    audioSrc: '../../assets/tracks/rozenbaum.mp3',
+    coverSrc: '../../assets/covers/rozenbaum.jpg'
+  },
+  {
+    title: 'Лютики',
+    audioSrc: '../../assets/tracks/lutiki.mp3',
+    coverSrc: '../../assets/covers/lutiki.jpg'
+  },
+  {
+    title: 'Балканская весна',
+    audioSrc: '../../assets/tracks/balkan.mp3',
+    coverSrc: '../../assets/covers/balkan.jpg'
+  },
+  {
     title: 'Город',
     audioSrc: '../../assets/tracks/gorod.mp3',
     coverSrc: '../../assets/covers/gorod.jpg'
