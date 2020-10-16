@@ -64,10 +64,6 @@ footer {
   }
 }
 
-.navigation-links-container {
-  margin-top: 15px;
-}
-
 .menu-element + .menu-element {
   margin-left: 40px;
 }
@@ -89,6 +85,10 @@ footer {
   margin-left: 25px;
 }
 
+.navigation-links-container {
+  margin: auto;
+}
+
 @media #{$tablets-and-large} {
   .app-container {
     min-height: $min-height;
@@ -101,6 +101,10 @@ footer {
 
   .players {
     width: 100%;
+  }
+
+  .navigation-links-container {
+    margin: 15px 0 0 0;
   }
 
   .menu-panel {
