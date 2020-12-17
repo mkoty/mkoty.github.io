@@ -2,6 +2,7 @@
   <carousel-component #coversCarousel
                       class="carousel-container"
                       [initialSlide]="currentSongIndex"
+                      [threshold]="30"
                       [margin]="100"
                       [angle]="10">
     <div *ngFor="let song of songs; let i = index"
