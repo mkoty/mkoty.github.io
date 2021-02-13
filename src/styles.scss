@@ -7,6 +7,10 @@ body {
   font-family: STAMPWRITER-KIT;
 }
 
+* {
+  user-select: none;
+}
+
 h1 {
   margin: 0;
 }

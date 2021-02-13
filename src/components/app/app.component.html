@@ -7,13 +7,17 @@
   <header class="app-container__header">
     <img class="pseudo-image"
          src="../../assets/logo2.png"
+         alt="logo"
          (load)="onImageLoad()">
     <div class="app-container__header-logo"></div>
   </header>
+
   <img class="pseudo-image"
        *ngFor="let song of songs"
        [src]="song.coverSrc"
+       [alt]="song.title"
        (load)="onImageLoad()">
+
   <div class="menu-panel flex">
     <div class="navigation-links-container flex flex-row">
       <div class="menu-element"
@@ -28,8 +32,38 @@
       </div>
     </div>
   </div>
-  <div class="main-content-container flex">
 
+  <div class="menu-panel flex">
+    <div class="navigation-links-container flex flex-row">
+      <div class="menu-element"
+           [ngClass]="{'active': shownElement === 'video'}"
+           (click)="shownElement = 'video'">
+        video
+      </div>
+      <div class="menu-element"
+           [ngClass]="{'active': shownElement === 'audio'}"
+           (click)="shownElement = 'audio'">
+        audio
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="menu-panel secondary flex">-->
+    <!--<div class="navigation-links-container flex flex-row">-->
+      <!--<div class="menu-element"-->
+           <!--[ngClass]="{'active': shownElement === 'video'}"-->
+           <!--(click)="shownElement = 'video'">-->
+        <!--About-->
+      <!--</div>-->
+      <!--<div class="menu-element"-->
+           <!--[ngClass]="{'active': shownElement === 'audio'}"-->
+           <!--(click)="shownElement = 'audio'">-->
+        <!--Express russe-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <div class="main-content-container flex">
     <div class="players">
       <div *ngIf="shownElement === 'audio'"
            class="audio-container">
@@ -42,6 +76,7 @@
       </video-player>
     </div>
   </div>
+
   <footer>
     <div class="social-icons">
       <a class="social-icons-link"

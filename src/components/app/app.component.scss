@@ -117,6 +117,18 @@ footer {
     margin: 60px 30px 0;
     font-size: 26px;
     z-index: 5;
+
+    &.secondary {
+      right: 0;
+      left: unset;
+      position: fixed;
+      top: 80px;
+
+      .menu-element {
+        margin-right: 40px;
+        margin-left: 0;
+      }
+    }
   }
 
   .menu-element + .menu-element {
