@@ -12,7 +12,7 @@ export class WaitSpinnerComponent implements AfterViewInit, OnDestroy {
 
   counter = 0;
   delay = 1000;
-  allowTimeout = false;
+  intervalReference;
 
   constructor(private ngZone: NgZone) {
   }
@@ -22,22 +22,18 @@ export class WaitSpinnerComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.allowTimeout = false;
+    clearInterval(this.intervalReference);
   }
 
   increment() {
     const flippedElement = document.getElementById('flipper');
     this.ngZone.runOutsideAngular(() => {
-      setTimeout(() => {
+      this.intervalReference = setInterval(() => {
         this.counter++;
         if (flippedElement) {
           flippedElement.style.transform = 'rotateY(' + 180 * this.counter + 'deg)';
         }
-        if (this.allowTimeout) {
-          this.increment();
-        }
       }, this.delay);
     });
   }
-
 }
