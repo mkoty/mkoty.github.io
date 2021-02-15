@@ -35,7 +35,8 @@
       <div class="progress-bar"
            (click)="goToTime($event)">
         <div class="progress-bar__all-time"></div>
-        <div class="progress-bar__current-time"
+        <div id="time-line"
+             class="progress-bar__current-time"
              [ngStyle]="{'width': currentProgressWidth + '%'}">
         </div>
       </div>

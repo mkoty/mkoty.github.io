@@ -1,5 +1,5 @@
 import {
-  AfterContentInit,
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -19,7 +19,7 @@ import {Song} from '../../entities/Song';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AudioPlayerComponent implements AfterContentInit {
+export class AudioPlayerComponent implements AfterViewInit {
 
   @Input() songs: Array<Song>;
   @ViewChild('coversCarousel') coversCarousel: CarouselComponent;
@@ -29,17 +29,28 @@ export class AudioPlayerComponent implements AfterContentInit {
   @Output() imageLoaded: EventEmitter<boolean> = new EventEmitter();
 
   currentSongIndex = 0;
-  currentProgressWidth = 0;
+  _currentProgressWidth = 0;
   currentVolumeHeight = 0;
   isPlayed = false;
   isMuted = false;
   isHighlighted = false;
   currentSongPath: string;
+  timeLine: HTMLElement;
+
+  set currentProgressWidth(value: number) {
+    this.setTimeLineWidth(value);
+    this._currentProgressWidth = 0;
+  }
+
+  get currentProgressWidth(): number {
+    return this._currentProgressWidth;
+  }
 
   constructor() {
   }
 
-  ngAfterContentInit() {
+  ngAfterViewInit() {
+    this.timeLine = document.getElementById('time-line');
     this.currentSongPath = this.songs[this.currentSongIndex].audioSrc;
     const player = this.audioPlayer.nativeElement;
     player.src = this.currentSongPath;
@@ -49,7 +60,7 @@ export class AudioPlayerComponent implements AfterContentInit {
       this.selectTrack((this.currentSongIndex + 1) % this.songs.length);
     };
     player.ontimeupdate = () => {
-      this.currentProgressWidth = player.currentTime / player.duration * 100;
+      this.updateTimeLine(player);
     };
 
     this.currentVolumeHeight = this.volume.nativeElement.offsetHeight * player.volume;
@@ -81,6 +92,15 @@ export class AudioPlayerComponent implements AfterContentInit {
     const position = event.offsetX / lineSizes.width;
     const player = this.audioPlayer.nativeElement;
     player.currentTime = player.duration * position;
+    this.updateTimeLine(player);
+  }
+
+  updateTimeLine(player) {
+    this.currentProgressWidth = player.currentTime / player.duration * 100;
+  }
+
+  setTimeLineWidth(value: number) {
+    this.timeLine.style.width = value + '%';
   }
 
   setVolume(event) {
